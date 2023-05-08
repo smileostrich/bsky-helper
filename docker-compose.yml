@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bsky-server:
+    image: happyostrich/bluesky-api-client:0.0.1
+    ports:
+      - "8080:8080"
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
